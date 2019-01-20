@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Car } from '../models/car.model';
 
 @Component({
   selector: 'app-car',
@@ -8,7 +9,7 @@ import { Component, Input } from '@angular/core';
 
 export class CarComponent {
   @Input()
-    car: any;
+    car: Car;
 
   constructor() {}
 }

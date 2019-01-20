@@ -1,2 +1,28 @@
-<!-- <mat-icon mat-list-icon>folder</mat-icon> -->
-{{car.name}} - {{car.updated | date}}
+<div class="row p-2" [class.isSold]="car.isSold">
+  <div class="col-md-12">
+    <div class="row mb-2">
+      <div class="col-md-12">
+        <h3>
+          {{car.name}}, {{car.model}}
+        </h3>
+        <p>{{car.description}}</p>
+        <small>{{car.createdAt | date}}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="row">
+      <button class="btn btn-outline-primary ml-2 mr-2"
+              [disabled]="car.isSold"
+              (click)="onBuy();">
+        Buy car!
+      </button>
+      <button class="btn btn-outline-danger"
+              [disabled]="car.isSold"
+              (click)="onDelete();">
+        Delete car
+      </button>
+    </div>
+  </div>
+</div>
