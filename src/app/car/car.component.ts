@@ -12,4 +12,12 @@ export class CarComponent {
     car: Car;
 
   constructor() {}
+
+  onBuy() {
+
+  }
+
+  onDelete() {
+
+  }
 }
