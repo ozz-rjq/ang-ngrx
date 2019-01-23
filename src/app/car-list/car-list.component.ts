@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import * as moment from 'moment';
 
-import { Car } from '../models/car.model';
+import { Car, Cars } from '../models/car.model';
+import { Store } from '@ngrx/store';
+import { AppState } from '../@ngrx/app.state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-car-list',
@@ -10,8 +13,14 @@ import { Car } from '../models/car.model';
   styleUrls: ['./car-list.component.scss']
 })
 
-export class CarListComponent {
+export class CarListComponent implements OnInit {
   cars: Car[] = [];
 
-  constructor() {}
+  carsState: Observable<Cars>;
+
+  constructor(private store: Store<AppState>) {}
+
+  ngOnInit() {
+    this.carsState = this.store.select('carsStore');
+  }
 }

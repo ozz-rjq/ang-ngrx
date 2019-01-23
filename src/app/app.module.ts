@@ -22,7 +22,7 @@ import { carsReducer } from './@ngrx/cars.reducer';
     BrowserModule,
     BrowserAnimationsModule,
     NgMatModule,
-    StoreModule.forRoot({carsReducer: carsReducer}),
+    StoreModule.forRoot({carsStore: carsReducer}),
   ],
   providers: [],
   bootstrap: [AppComponent]

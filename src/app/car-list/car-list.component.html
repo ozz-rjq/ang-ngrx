@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let car of cars">
+  <li class="list-group-item" *ngFor="let car of (carsState | async).cars">
     <app-car [car]="car"></app-car>
   </li>
 </ul>

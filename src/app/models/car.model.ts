@@ -5,3 +5,7 @@ export interface Car {
   createdAt: string;
   isSold: boolean;
 }
+
+export interface Cars {
+  cars: Car[];
+}
