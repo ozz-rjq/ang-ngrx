@@ -24,6 +24,7 @@ export class CarFormComponent {
     }
 
     const car: Car = {
+      id: Math.floor(Math.random() * 1000),
       name: this.carBrend,
       model: this.carModel,
       description: 'This is a test car',
